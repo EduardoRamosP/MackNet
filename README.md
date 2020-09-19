@@ -20,10 +20,14 @@ Incurred <- IncurredT.SchedudeP(ins.line.data(CompanyCode,comauto_pos))        #
 Premium <- NetEarned.SchedudeP(ins.line.data(CompanyCode,comauto_pos))         #Premium vector (Premiums)
 ```
 
-Once the input data is calculated, the MackNet model is fitted as follows:
+Once the input data is calculated, the MackNet model for paid and incurred loss data are fitted as follows:
 ``` r
+#Paid loss data
 MackNetPaidModel <- MackNet_Paid(Cumulative, Incurred, Premium, Ensemble=20,wd=0, drop=0.05, Output="linear",
                               MinimumEpochs = 700, Epochs=1000, EarlyStoppingPatience=50, Learning=0.01)
+#Incurred loss data
+MackNetIncModel <- MackNet_Incurred(Cumulative, Incurred, Premium, Ensemble=20, wd=0, drop=0.05, Output="linear",
+                                 MinimumEpochs = 700, Epochs=1000, EarlyStoppingPatience=50, Learning=0.01)
 ```
 The implementation carried out allows the user to modify the all the variables of the MackNet model. The more relevant are:
 - wd: Weigthed decay of ADAM optimization algorithm.
@@ -36,11 +40,10 @@ The implementation carried out allows the user to modify the all the variables o
 - Simulations: Number of simulations to be obtained from the MackNet model.
 - Output: It defines the activation function of the output layer.
 
+The main outputs provided by the model fitting are:
+- Alpha: It provides the estimation of the alpha paramerters made by the MackNet model. The number of alpha values is the number of developments present in the triangle minus one.
+- DevFactors: The development factors estimated by the model. Same number of parameters than Alpha.
+- SampledReserves: Reserves sampled by the MackNet model. The number of simulations are equal to the number defined in the inputs (variable: Simulations).
+- SampledUltimate: Ultimates sampled by the MackNet model.
 
-``` r
-MackNetIncModel <- MackNet_Incurred(Cumulative, Incurred, Premium, Ensemble=20, wd=0, drop=0.05, Output="linear",
-                                 MinimumEpochs = 700, Epochs=1000, EarlyStoppingPatience=50, Learning=0.01)
-```
-
-
-For more details on the **keras** R package, visit [https://keras.rstudio.com/](https://keras.rstudio.com/).
+For futher details about the **keras** R package, visit [https://keras.rstudio.com/](https://keras.rstudio.com/).

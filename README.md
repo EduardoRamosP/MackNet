@@ -6,4 +6,7 @@ The MackNet package can be installed by cloning the repo and build the R package
 ``` r
 require(devtools)
 install_github("EduardoRamosP/MackNet")
+library(MackNet)
 ```
+
+

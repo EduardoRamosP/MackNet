@@ -1,0 +1,15 @@
+Package: MackNet
+Type: Package
+Title: Mack-Net model: Blending Mack's model with Recurrent Neural Networks
+Version: 1.0.0
+Author: Eduardo Ramos
+Maintainer: Eduardo Ramos <ramos.perez.e@gamil.com>
+Description: The package supplies the code to replicate the model explained within the article "Mack-Net model: Blending Mack's model with Recurrent Neural Networks".
+Depends: R (>= 2.10)
+License: GPL-3
+Encoding: UTF-8
+Imports: 
+  keras, 
+  abind
+LazyData: true
+RoxygenNote: 7.1.0

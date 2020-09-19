@@ -22,17 +22,23 @@ Premium <- NetEarned.SchedudeP(ins.line.data(CompanyCode,comauto_pos))         #
 
 Once the input data is calculated, the MackNet model is fitted as follows:
 ``` r
-MackNetPaidModel=MackNet_Paid(Cumulative, Incurred, Premium, Ensemble=20,wd=0, drop=0.05, Output="linear",
+MackNetPaidModel <- MackNet_Paid(Cumulative, Incurred, Premium, Ensemble=20,wd=0, drop=0.05, Output="linear",
                               MinimumEpochs = 700, Epochs=1000, EarlyStoppingPatience=50, Learning=0.01)
 ```
-The implementation carried out allows the user to modify the following variables of the MackNet model:
-- Item 1
-- Item 2
+The implementation carried out allows the user to modify the all the variables of the MackNet model. The more relevant are:
+- wd: Weigthed decay of ADAM optimization algorithm.
+- Learning: Learning rate of the neural networks fitted.
+- drop: Dropout regularization to be applied to the neural networks.
+- Ensemble: Number of neural networks to be fitted.
+- Epochs: Maximum number of epochs for fitting the neural networks.
+- EarlyStoppingPatience: The training process stops if the error is not improved in the number of epochs defined in this variable.
+- MinimumEpocs: Minimum number of epochs. The neural networks will be fit at least the number of epochs defined in this variable.
+- Simulations: Number of simulations to be obtained from the MackNet model.
+- Output: It defines the activation function of the output layer.
 
 
-#Model for incurred loss data is fitted
 ``` r
-MackNetIncModel=MackNet_Incurred(Cumulative, Incurred, Premium, Ensemble=20, wd=0, drop=0.05, Output="linear",
+MackNetIncModel <- MackNet_Incurred(Cumulative, Incurred, Premium, Ensemble=20, wd=0, drop=0.05, Output="linear",
                                  MinimumEpochs = 700, Epochs=1000, EarlyStoppingPatience=50, Learning=0.01)
 ```
 

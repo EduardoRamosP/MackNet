@@ -14,8 +14,8 @@ library(MackNet)
 
 The first company of Commercial Auto is selected. Then, the paid and incurred cost triangles are obtained. As MackNet models requires the use of an exposure measure, the premiums of that company are also saved in a variable.
 ``` r
-CompanyCode = CA_TriangleSelectionOrderedRt[,"Company_Code"][1]               #Company code is selected
-Cumulative = CumulativeT.SchedudeP(ins.line.data(CompanyCode,comauto_pos))    #Cumulative payments triangle
-Incurred = IncurredT.SchedudeP(ins.line.data(CompanyCode,comauto_pos))        #Incurred cost triangle
-Premium = NetEarned.SchedudeP(ins.line.data(CompanyCode,comauto_pos))         #Premium vector (Premiums)
+CompanyCode <- CA_TriangleSelectionOrderedRt[,"Company_Code"][1]               #Company code is selected
+Cumulative <- CumulativeT.SchedudeP(ins.line.data(CompanyCode,comauto_pos))    #Cumulative payments triangle
+Incurred <- IncurredT.SchedudeP(ins.line.data(CompanyCode,comauto_pos))        #Incurred cost triangle
+Premium <- NetEarned.SchedudeP(ins.line.data(CompanyCode,comauto_pos))         #Premium vector (Premiums)
 ```

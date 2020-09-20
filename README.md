@@ -7,7 +7,7 @@ The MackNet package can be installed by cloning the repo and build the R package
 require(devtools)
 install_github("EduardoRamosP/MackNet")
 ```
-**MackNet** library is liaded in order to obtain NAIC Schedule P Data and fit the reserving models
+**MackNet** library is loaded in order to obtain NAIC Schedule P Data and fit the reserving models
 ``` r
 library(MackNet)
 ```

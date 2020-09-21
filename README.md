@@ -46,4 +46,4 @@ The main outputs provided by the model fitting are:
 - SampledReserves: Reserves sampled by the MackNet model. The number of simulations are equal to the number defined in the inputs (variable: Simulations).
 - SampledUltimate: Ultimates sampled by the MackNet model.
 
-For futher details about the **keras** R package, visit [https://keras.rstudio.com/](https://keras.rstudio.com/).
+For futher details about the **keras** R package, visit [https://keras.rstudio.com/](https://keras.rstudio.com/)...
